@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+import Timer from "./Timer.js";
+import Toggle from "./Toggle";
+import TodoList from "./TodoList";
+import CardList from './CardList';
+import Form from './Form';
+
+const todoItems = [
+  'Learn React',
+  'Build a project',
+  'Go for a walk',
+  'Do some exercises',
+  'Join a music class',
+  'Read a novel',
+];
+
+
+  const cards = [
+    { title: 'Card 1', content: 'This is the content of Card 1' },
+    { title: 'Card 2', content: 'This is the content of Card 2' },
+    { title: 'Card 3', content: 'This is the content of Card 3' },
+  ];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <Toggle/>
+       <Timer />
+       <TodoList todoItems={todoItems} />
+       <CardList cards={cards} />
+       <Form/>
     </div>
+   
+   
+  
   );
 }
 
